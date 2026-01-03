@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Mes y navegación -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/botonAnterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flecha_izquierda"
+            android:backgroundTint="@color/fondo_emogis"/>
+
+        <TextView
+            android:id="@+id/mesActual"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enero 2026"
+            android:textSize="18sp"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/botonSiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/fondo_emogis"
+            android:src="@drawable/flecha_derecha"/>
+    </LinearLayout>
+
+    <!-- RecyclerView con 7 columnas -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCalendario"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>

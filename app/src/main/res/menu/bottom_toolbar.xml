@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/calendarioFragment"
+        android:icon="@drawable/calendario"
+        android:title="Calendario" />
+
+    <item
+        android:id="@+id/inicioFragment"
+        android:icon="@drawable/hogar"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/helpFragment"
+        android:icon="@drawable/tienda"
+        android:title="Tienda" />
+</menu>
