@@ -12,7 +12,7 @@
         android:title="Inicio" />
 
     <item
-        android:id="@+id/helpFragment"
+        android:id="@+id/tiendaFragment"
         android:icon="@drawable/tienda"
         android:title="Tienda" />
 </menu>

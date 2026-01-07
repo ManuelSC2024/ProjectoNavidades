@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Project1</string>
+    <string name="enero_2026">January 2026</string>
+    <string name="comer_fruta_te_hara_sentir_mejor">Eating fruit will make you feel better</string>
+    <string name="come_fruta">Eat fruit</string>
+    <string name="da_un_paseo">Take a walk</string>
+    <string name="dar_un_paseo_te_ayudara_a_relajarte">Going for a walk will help you relax</string>
+    <string name="tomate_una_siesta">Take a nap</string>
+    <string name="tomar_una_siesta_te_hara_sentir_mejor">Taking a nap will make you feel better</string>
+    <string name="_10" translatable="false">+ 10</string>
+    <string name="_20" translatable="false">+ 20</string>
+    <string name="_30" translatable="false">+ 30</string>
+    <string name="normal">Normal</string>
+    <string name="triste">Sad</string>
+    <string name="horrible">Awful</string>
+    <string name="como_estas_hoy">How are you today?</string>
+    <string name="selecciona_tu_estado_de_animo">Select your mood</string>
+    <string name="puntos">Points %1$d</string>
+    <string name="feliz_bien">So good to see you happy! Keep doing what makes you smile!</string>
+    <string name="triste_texto">Its okay to feel sad sometimes. Take a deep breath and give yourself a moment</string>
+    <string name="enfadado_texto">Calming down helps. Try taking a walk or listening to music to relax</string>
+    <string name="normal_texto">Everything is calm today. Take the opportunity to do something you enjoy or that motivates you</string>
+    <string name="bien">Good</string>
+    <string name="puntos_0">Points 0</string>
+    <string name="felicitaciones">Congratulations</string>
+    <string name="comprar">Buy</string>
+    <string name="tienda">Shop</string>
+    <string name="puntos_0T">Points 0</string>
+</resources>

@@ -1,5 +1,31 @@
 <resources>
     <string name="app_name">Proxecto1</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enero_2026">Enero 2026</string>
+    <string name="comer_fruta_te_hara_sentir_mejor">Comer fruta te hara sentir mejor</string>
+    <string name="come_fruta">Come fruta</string>
+    <string name="da_un_paseo">Da un Paseo</string>
+    <string name="dar_un_paseo_te_ayudara_a_relajarte">Dar un Paseo te ayudara a relajarte</string>
+    <string name="tomate_una_siesta">Tomate una siesta</string>
+    <string name="tomar_una_siesta_te_hara_sentir_mejor">Tomar una siesta te hara sentir mejor</string>
+    <string name="normal">Normal</string>
+    <string name="triste">Triste</string>
+    <string name="horrible">Horrible</string>
+    <string name="como_estas_hoy">Como estas hoy?</string>
+    <string name="selecciona_tu_estado_de_animo">Selecciona tu estado de animo</string>
+    <string name="puntos_0">Puntos 0</string>
+    <string name="felicitaciones">Felicitaciones</string>
+    <string name="_50p" translatable="false">50P</string>
+    <string name="comprar">Comprar</string>
+    <string name="tienda">Tienda</string>
+    <string name="puntos_0T">Puntos 0</string>
+    <string name="_1" translatable="false">1</string>
+    <string name="_10" translatable="false">+ 10</string>
+    <string name="_20" translatable="false">+ 20</string>
+    <string name="_30" translatable="false">+ 30</string>
+    <string name="puntos">Puntos %1$d</string>
+    <string name="feliz_bien">¡Qué bien verte feliz! Sigue haciendo lo que te hace sonreír!</string>
+    <string name="triste_texto">Está bien sentirse triste a veces. Respira hondo y date un momento para ti</string>
+    <string name="enfadado_texto">Calmarse ayuda. Prueba dar un paseo o escuchar música para relajarte</string>
+    <string name="normal_texto">Todo en calma hoy. Aprovecha para hacer algo que te guste o te motive</string>
+    <string name="bien">Bien</string>
 </resources>

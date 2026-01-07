@@ -14,4 +14,9 @@
         android:id="@+id/calendarioFragment"
         android:name="com.example.proxecto1.CalendarioFragment"
         android:label="CalendarioFragment" />
+    <fragment
+        android:id="@+id/tiendaFragment"
+        android:name="com.example.proxecto1.TiendaFragment"
+        android:label="fragment_tienda"
+        tools:layout="@layout/fragment_tienda" />
 </navigation>

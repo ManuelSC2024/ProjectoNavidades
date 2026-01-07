@@ -55,32 +55,41 @@ class InicioFragment : Fragment() {
         // SharedPreferences
         sharedPref = requireActivity().getSharedPreferences("MisPuntos", Context.MODE_PRIVATE)
         puntosTotales = sharedPref.getInt("puntosTotales", 0)
-        puntosText.text = "Puntos  $puntosTotales"
+        // Usamos string resource con formato
+        puntosText.text = getString(R.string.puntos, puntosTotales)
 
         // Restaurar estado de los checkboxes
-        checkBoxFruta.isChecked = sharedPref.getBoolean("checkBoxFruta", false)
-        checkBoxPaseo.isChecked = sharedPref.getBoolean("checkBoxPaseo", false)
-        checkBoxSiesta.isChecked = sharedPref.getBoolean("checkBoxSiesta", false)
-
-        // Restaurar estado de ánimo del día actual
         val fechaHoy = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        checkBoxFruta.isChecked = sharedPref.getBoolean("checkBoxFruta_$fechaHoy", false)
+        checkBoxPaseo.isChecked = sharedPref.getBoolean("checkBoxPaseo_$fechaHoy", false)
+        checkBoxSiesta.isChecked = sharedPref.getBoolean("checkBoxSiesta_$fechaHoy", false)
+
+        // Restaurar estado de ánimo del día actual usando strings.xml
         when (sharedPref.getString("estado_$fechaHoy", "")) {
-            "feliz" -> mostrarEstado(R.drawable.feliz, "¡¡Qué bien verte feliz! Sigue haciendo lo que te hace sonreír!")
-            "triste" -> mostrarEstado(R.drawable.triste, "Está bien sentirse triste a veces. Respira hondo y date un momento para ti")
-            "enfadado" -> mostrarEstado(R.drawable.enfadado, "Calmarse ayuda. Prueba dar un paseo o escuchar música para relajarte")
-            "normal" -> mostrarEstado(R.drawable.normal, "Todo en calma hoy. Aprovecha para hacer algo que te guste o te motive")
+            "feliz" -> mostrarEstado(R.drawable.feliz, getString(R.string.feliz_bien))
+            "triste" -> mostrarEstado(R.drawable.triste, getString(R.string.triste_texto))
+            "enfadado" -> mostrarEstado(R.drawable.enfadado, getString(R.string.enfadado_texto))
+            "normal" -> mostrarEstado(R.drawable.normal, getString(R.string.normal_texto))
         }
 
         // Click listeners para CardViews de estado de ánimo
-        felizCard.setOnClickListener { seleccionarEstado("feliz", R.drawable.feliz, "¡¡Qué bien verte feliz! Sigue haciendo lo que te hace sonreír!") }
-        tristeCard.setOnClickListener { seleccionarEstado("triste", R.drawable.triste, "Está bien sentirse triste a veces. Respira hondo y date un momento para ti") }
-        enfadadoCard.setOnClickListener { seleccionarEstado("enfadado", R.drawable.enfadado, "Calmarse ayuda. Prueba dar un paseo o escuchar música para relajarte") }
-        normalCard.setOnClickListener { seleccionarEstado("normal", R.drawable.normal, "Todo en calma hoy. Aprovecha para hacer algo que te guste o te motive") }
+        felizCard.setOnClickListener {
+            seleccionarEstado("feliz", R.drawable.feliz, getString(R.string.feliz_bien))
+        }
+        tristeCard.setOnClickListener {
+            seleccionarEstado("triste", R.drawable.triste, getString(R.string.triste_texto))
+        }
+        enfadadoCard.setOnClickListener {
+            seleccionarEstado("enfadado", R.drawable.enfadado, getString(R.string.enfadado_texto))
+        }
+        normalCard.setOnClickListener {
+            seleccionarEstado("normal", R.drawable.normal, getString(R.string.normal_texto))
+        }
 
         // Click listeners para CheckBoxes
-        setupCheckBox(checkBoxFruta, 20, "checkBoxFruta")
-        setupCheckBox(checkBoxPaseo, 10, "checkBoxPaseo")
-        setupCheckBox(checkBoxSiesta, 30, "checkBoxSiesta")
+        marcado(checkBoxFruta, 20, "checkBoxFruta")
+        marcado(checkBoxPaseo, 10, "checkBoxPaseo")
+        marcado(checkBoxSiesta, 30, "checkBoxSiesta")
 
         return view
     }
@@ -99,19 +108,21 @@ class InicioFragment : Fragment() {
         }
     }
 
-    // Función para manejar puntos y persistencia
-    private fun setupCheckBox(checkBox: CheckBox, puntos: Int, key: String) {
+    private fun marcado(checkBox: CheckBox, puntos: Int, key: String) {
+        val fechaHoy = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        val marcado = sharedPref.getBoolean("${key}_$fechaHoy", false)
+        checkBox.setOnCheckedChangeListener(null)
+        checkBox.isChecked = marcado
         checkBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                // Sumar puntos
-                puntosTotales += puntos
-                puntosText.text = "Puntos  $puntosTotales"
-
-                // Guardar en SharedPreferences
-                with(sharedPref.edit()) {
-                    putInt("puntosTotales", puntosTotales)
-                    putBoolean(key, true)
-                    apply()
+                if (!marcado) {
+                    puntosTotales += puntos
+                    puntosText.text = getString(R.string.puntos, puntosTotales)
+                    with(sharedPref.edit()) {
+                        putInt("puntosTotales", puntosTotales)
+                        putBoolean("${key}_$fechaHoy", true)
+                        apply()
+                    }
                 }
             } else {
                 checkBox.isChecked = true
